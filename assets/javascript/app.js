@@ -1,70 +1,70 @@
 var questions = [
     {
-      question: 'What does doctype in HTML do?',
+      question: 'What was the pink rangers name?',
       answers: [
-        { answer: 'A. Tells the browser how to render the HTML markup', value: true },
-        { answer: 'B. Loads all references to external JavaScript files', value: false },
-        { answer: 'C. Adds CSS styles to the HTML page', value: false },
-        { answer: "D. It doesn't do anything it's just there as a comment to other developers", value: false }
+        { answer: 'A. Kimberly Hart', value: true },
+        { answer: 'B. Rita Repulsa', value: false },
+        { answer: 'C. Angela', value: false },
+        { answer: 'D. Trini Kawn', value: false }
       ]
     },
     {
-      question: 'What is NOT an HTML5 element?',
+      question: 'What year did the Mighty Morphin Power Rangers premiered?',
       answers: [
-        { answer: 'block', value: true },
-        { answer: 'audio', value: false },
-        { answer: 'canvas', value: false },
-        { answer: 'section', value: false }
+        { answer: '2003', value: false },
+        { answer: '2010', value: false },
+        { answer: '1987', value: false },
+        { answer: '1993', value: true }
       ]
     },
     {
-      question: 'How can you make a script run asynchronous?',
+      question: 'How many Power Rangers were in Mighty Morphin?',
       answers: [
-        { answer: 'script async', value: true },
-        { answer: 'asynchronous', value: false },
-        { answer: 'async script', value: false },
-        { answer: 'script asynchronous', value: false }
+        { answer: '6', value: true },
+        { answer: '8', value: false },
+        { answer: '34', value: false },
+        { answer: '5', value: false }
       ]
     },
     {
-      question: 'What is the difference between classes and IDs in CSS?',
+      question: 'Who was the green ranger before becoming the white ranger?',
       answers: [
-        { answer: 'IDs can only be used once in the HTML', value: true },
-        { answer: 'IDs can be accessed by JavaScript', value: false },
-        { answer: 'Classes are used on children elements', value: false },
-        { answer: "Classes can't be added to the body element", value: false }
+        { answer: 'Billy Cranston', value: false },
+        { answer: 'Adam Park', value: false },
+        { answer: 'Tommy Oliver', value: true },
+        { answer: "Rocky DeSantos", value: false }
       ]
     },
     {
-      question: "What does 'reset' in CSS mean?",
+      question: "Who was the evil witch?",
       answers: [
-        { answer: 'Resets the default browser styling', value: true },
-        { answer: 'Normalizes styles accross all browsers', value: false },
-        { answer: 'Removes inline CSS styles', value: false },
-        { answer: 'Start the project over', value: false }
+        { answer: 'Ms. Appleby', value: false },
+        { answer: 'Aisha Campbell', value: false },
+        { answer: 'Trini kwan', value: false },
+        { answer: 'Rita Repulsa', value: true }
       ]
     },
     {
-      question: 'What does z-index do?',
+      question: 'Who was the team leader of the power rangers?',
       answers: [
-        { answer: 'Controls the vertical stacking order of elements that overlap', value: true },
-        { answer: 'Moves elements off screen', value: false },
-        { answer: 'Hides elements from the screen', value: false },
-        { answer: 'Controls the horizontal stacking order of elements that overlap', value: false }
+        { answer: 'Tommy Oliver', value: false },
+        { answer: 'Zordon', value: false },
+        { answer: 'Jason Lee Scott', value: true },
+        { answer: 'Zach Taylor', value: false }
       ]
     },
     {
-      question: 'What is the box model?',
+      question: 'Billy Cranston was the _____ ranger?',
       answers: [
-        { answer: 'All HTML elements can be considered as boxes', value: true },
-        { answer: 'A way of stacking HTML elements', value: false },
-        { answer: 'A way of styling HTML elements', value: false },
-        { answer: 'Creates a way to position the browser grid', value: false }
+        { answer: 'Blue', value: true },
+        { answer: 'Black', value: false },
+        { answer: 'Yellow', value: false },
+        { answer: 'Purple', value: false }
       ]
     }
   ];
   
-  // Global variables
+ 
   var game;
   var counter = 0;
   var clock;
@@ -74,7 +74,7 @@ var questions = [
   var unansweredCounter = 0;
   
   $(document).ready(function() {
-    // Start the game when that start button is clicked
+
     $('.answers').css('visibility', 'hidden');
     $('body').on('click', '.start-btn', function(event) {
       event.preventDefault();
@@ -83,7 +83,7 @@ var questions = [
     });
   
     $('body').on('click', '.answer', function(event) {
-      // console.log($(this));
+      
       chosenAnswer = $(this).text();
       var answerCounter = questions[counter].answers;
   
@@ -132,8 +132,8 @@ var questions = [
       .fadeOut(400);
     setTimeout(questionCounter, 2000);
   }
-  
-  // Start the game
+ 
+
   function startGame() {
     $('.start-page').css('display', 'none');
     $('.questions-page').css('visibility', 'visible');
@@ -167,7 +167,7 @@ var questions = [
     }
   }
   
-  // Timer function
+ 
   function timerHolder() {
     clearInterval(clock);
     clock = setInterval(seconds, 1000);
@@ -182,18 +182,18 @@ var questions = [
     }
   }
   
-  // Finishing the game
+  
   function finishGame() {
     var final = $('.main')
-      .html("<p>All done, here's how you did!<p><br><br>")
-      .append('<p>Correct Answers: ' + correctCounter + '</p><br>')
+       .html("<p>You are now a Power Ranger!<p><br>")
+       .append('<p>Correct Answers: ' + correctCounter + '</p><br>')
       .append('<p>Wrong Answers: ' + incorrectCounter + '</p>');
     $(final).attr('<div>');
     $(final).attr('class', 'final');
     $('.final').append('<p><a class="btn btn-primary btn-lg reset-button" href="#">Restart the game!</a></p>');
   }
   
-  // Reset the game
+  
   function resetGame() {
     counter = 0;
     correctCounter = 0;

@@ -2,8 +2,10 @@ body {
     background-image: url(../images/Power\ Rangers\ Background.jpg);
     background-size: cover;
     text-align: center;
-    font-family: Helsinki;
-    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    
+    
   }
   
   .main {
@@ -16,15 +18,11 @@ body {
     visibility: hidden;
   }
   
-  .img-initial {
-    background: url('../images/trivia-game.png') no-repeat center top;
-    background-size: 70%;
-    height: 520px;
-  }
-  
+
+
   .start-btn {
     width: 200px;
-    color: #631172;
+    color: green;
     font-size: 36px;
     border-radius: 50px;
     background: #fed501;
@@ -47,7 +45,7 @@ body {
   }
   
   .time {
-    color: #ff5270;
+    color: yellow;
     font-size: 30px;
   }
   
@@ -59,7 +57,7 @@ body {
   
   .answer {
     padding: 20px;
-    color: #631172;
+    color: green;
     width: 80%;
     margin: 0 auto;
     margin-bottom: 20px;
